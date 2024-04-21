@@ -1,0 +1,31 @@
+TABLE AGENTS
+AGENT_CODE: Unique identifier for each agent. This is a Primary key
+AGENT_NAME: The agent's full name.
+WORKING_AREA: City or region where the agent operates.
+COMMISSION: Percentage earned by the agent on sales.
+PHONE_NO: Agent's contact phone number.
+COUNTRY: Agent's country of residence.
+
+TABLE CUSTOMER
+CUST_CODE: Unique identifier for each customer. This is a primary key
+CUST_NAME: Customer's full name.
+CUST_CITY: City where the customer is located.
+WORKING_AREA: Region or area the customer operates within.
+CUST_COUNTRY: Customer's country.
+GRADE: Customer's rating or ranking.
+OPENING_AMT: Initial account balance.
+RECEIVE_AMT: Total amount received from the customer.
+PAYMENT_AMT: Total amount paid by the customer.
+OUTSTANDING_AMT: Remaining balance due from the customer.
+PHONE_NO: Customer's contact phone number.
+AGENT_CODE: Code of the agent assigned to the customer. This is a foreign key, to be used when connecting to Table AGENTS.
+
+
+TABLE ORDERS
+ORD_NUM: Unique order number. This is a primary key
+ORD_AMOUNT: Total value of the order.
+ADVANCE_AMOUNT: Down payment or deposit on the order.
+ORD_DATE: Date the order was placed.
+CUST_CODE: Customer code associated with the order. This is a foreign key, to be used when connecting to Table CUSTOMER.
+AGENT_CODE: Agent code associated with the order. This is a foreign key, to be used when connecting to Table AGENTS.
+ORD_DESCRIPTION: Brief description of the order contents.
