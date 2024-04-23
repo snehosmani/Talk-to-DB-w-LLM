@@ -27,6 +27,18 @@ if prompt:
         st.write(f'Y-axis : {ini_json['gem_response']['Y-Axis']}')
         st.write(f'Type of Graph : {ini_json['gem_response']['Graph']}')
         
+        #chart
+        if (ini_json['gem_response']['Graph']).lower() == 'bar':
+            st.bar_chart(df,x=ini_json['gem_response']['X-Axis'],y=ini_json['gem_response']['Y-Axis'])
+        elif (ini_json['gem_response']['Graph']).lower() == 'line':
+            st.line_chart(df,x=ini_json['gem_response']['X-Axis'],y=ini_json['gem_response']['Y-Axis'])
+        elif (ini_json['gem_response']['Graph']).lower() == 'scatter':
+            st.scatter_chart(df,x=ini_json['gem_response']['X-Axis'],y=ini_json['gem_response']['Y-Axis'])
+        else:
+            st.write('Chart type not in the description')
+
+
+
 
 
 
